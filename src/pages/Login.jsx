@@ -20,7 +20,6 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
     // const base64encodedData = Buffer.from(`${email}:${password}`).toString(
     //   "base64"
     // );
@@ -33,7 +32,6 @@ const Login = () => {
       body: JSON.stringify({ email, password }),
     });
     const json = await response.json();
-    console.log(json.response.message);
     if (json.response.code === 200) {
       localStorage.setItem("token", json.response.message.loginToken);
       navigate("/");

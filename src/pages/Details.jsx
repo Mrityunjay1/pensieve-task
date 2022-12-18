@@ -7,7 +7,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const Details = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
-  console.log(id);
   const loadUserData = async () => {
     const response = await fetch(`http://52.74.166.134:3000/api/${id}`, {
       method: "GET",
@@ -16,7 +15,6 @@ const Details = () => {
       },
     });
     const json = await response.json();
-    console.log(json);
     setData(json);
   };
   useEffect(() => {

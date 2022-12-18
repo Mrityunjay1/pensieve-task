@@ -62,7 +62,6 @@ const Register = () => {
       body: JSON.stringify({ name, email, password }),
     });
     const json = await response.json();
-    console.log(json.response.message);
     if (json.response.code === 200) {
       toast.success("user resgistered successfully");
       navigate("/login");
